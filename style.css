@@ -269,11 +269,119 @@ nav a:hover {
     position: relative;
 }
 
-.category-title::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    margin-top: 8px;
-    background-color: #ff5a36;
+
+
+
+
+
+/* tablat Responsive  */
+
+@media (max-width: 992px) {
+
+    header {
+        padding: 0 30px;
+    }
+
+    .hero {
+        padding: 60px 30px;
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+    .hero-image {
+        width: 400px;
+    }
+
+    .products {
+        padding: 60px 30px;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+
+
+
+
+/* mobile RESPONSIVE  */
+
+
+
+@media (max-width: 600px) {
+
+    header {
+        height: auto;
+        padding: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .cart-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 50px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .products {
+        padding: 50px 20px;
+    }
+
+    .products h2 {
+        font-size: 30px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-card img {
+        height: 240px;
+    }
 }
