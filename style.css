@@ -12,25 +12,123 @@
 
 
  /* logo */
-
- .logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #111;
-    text-decoration: none;
- }
-
- nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-    transition: 0.3s;
- }
-
-nav a:hover {
-    color: #ff5a36;
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
+
+/* Navigation Icons */
+.nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.nav-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Search Icon */
+.search-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Search Input */
+.search-container input {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    border: none;
+    outline: none;
+    transition: all 0.4s ease;
+}
+
+/* Open Search Box */
+.search-container:hover input,
+.search-container input:focus {
+    width: 200px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    opacity: 1;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+
+
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* Navigation Icon */
+.nav-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+/* Icon Image */
+.nav-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+/* Tooltip */
+.nav-icon::after {
+    content: attr(data-name);
+    position: absolute;
+    top: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background: #222;
+    color: white;
+    font-size: 12px;
+    padding: 5px 9px;
+    border-radius: 5px;
+    
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    
+    transition: 0.3s ease;
+}
+
+
+/* Show Tooltip */
+.nav-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 
 
 
@@ -43,7 +141,7 @@ nav a:hover {
     border: none;
     border-radius: 8px;
     background-color: #ff5a36;
-    color: aqua;
+    color: rgb(19, 184, 184);
     font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
@@ -159,7 +257,7 @@ nav a:hover {
 /* product cart */
 
 .product-cart {
-    background-color: aquamarine;
+    background-color: rgb(183, 206, 198);
     border-radius: 15px;
     padding: 20px;
     overflow: hidden;
