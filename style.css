@@ -829,6 +829,1029 @@
 }
 
 
+
+/* =========================
+   JOIN SECTION
+========================= */
+
+.join-section {
+    width: 100%;
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #050505;
+    padding: 80px 20px;
+}
+
+
+/* Background Glow */
+
+.join-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    filter: blur(100px);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation: joinGlow 6s ease-in-out infinite alternate;
+}
+
+
+/* Join Content */
+
+.join-content {
+    position: relative;
+    z-index: 2;
+
+    width: 700px;
+    max-width: 90%;
+
+    padding: 65px 40px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5);
+
+    animation: joinBox 1s ease forwards;
+}
+
+
+/* Small Heading */
+
+.join-small-title {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* Main Heading */
+
+.join-content h1 {
+    margin: 0;
+
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    letter-spacing: -2px;
+
+    color: #ffffff;
+}
+
+
+/* Gradient Heading */
+
+.join-content h1 span {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #888888,
+        #ffffff
+    );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: headingShine 4s linear infinite;
+}
+
+
+/* Description */
+
+.join-content p {
+    max-width: 500px;
+
+    margin: 25px auto 35px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* Join Button */
+
+.join-btn {
+    position: relative;
+
+    padding: 14px 38px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: #050505;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.35s ease;
+
+    overflow: hidden;
+}
+
+
+/* Button Shine */
+
+.join-btn::before {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 100%;
+
+    top: 0;
+    left: -100px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    transform: skewX(-25deg);
+
+    transition: 0.5s;
+}
+
+
+/* Button Hover */
+
+.join-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+
+.join-btn:hover::before {
+    left: 120%;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes joinBox {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+@keyframes joinGlow {
+
+    from {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.9;
+    }
+
+}
+
+
+@keyframes headingShine {
+
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: 200% center;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .join-section {
+        min-height: 450px;
+
+        padding: 60px 15px;
+    }
+
+    .join-content {
+        padding: 50px 25px;
+    }
+
+    .join-content h1 {
+        font-size: 38px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .join-content {
+        padding: 40px 20px;
+    }
+
+    .join-small-title {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .join-content h1 {
+        font-size: 30px;
+
+        letter-spacing: -1px;
+    }
+
+    .join-content p {
+        font-size: 13px;
+    }
+
+}
+
+
+
+
+
+
+
+* =========================
+   LOGIN SECTION
+========================= */
+
+.login-section {
+    width: 100%;
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #050505;
+
+    /* Initially hidden */
+    display: none;
+}
+
+
+/* Login Background Glow */
+
+.login-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    filter: blur(100px);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation: loginGlow 6s ease-in-out infinite alternate;
+}
+
+
+/* Login Box */
+
+.login-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: 420px;
+    max-width: 90%;
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(255, 255, 255, 0.045);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.6);
+
+    animation: loginBoxAppear 0.8s ease forwards;
+}
+
+
+/* Login Heading */
+
+.login-box h2 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* Login Description */
+
+.login-box > p {
+    margin-bottom: 30px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 14px;
+}
+
+
+/* Input */
+
+.login-box input {
+    width: 100%;
+
+    height: 52px;
+
+    margin-bottom: 16px;
+
+    padding: 0 18px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+
+/* Placeholder */
+
+.login-box input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* Input Focus */
+
+.login-box input:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.06);
+}
+
+
+/* Login Button */
+
+.login-btn {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #050505;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.35s ease;
+}
+
+
+/* Login Button Hover */
+
+.login-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(255, 255, 255, 0.18);
+}
+
+
+/* Create Account Text */
+
+.account-text {
+    margin-top: 25px !important;
+
+    color: rgba(255, 255, 255, 0.45) !important;
+
+    font-size: 13px;
+}
+
+
+/* Create Account Button */
+
+.account-text button {
+    margin-left: 5px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.account-text button:hover {
+    color: #999999;
+}
+
+
+/* =========================
+   LOGIN ANIMATION
+========================= */
+
+@keyframes loginBoxAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes loginGlow {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            scale(0.8);
+
+        opacity: 0.4;
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
+
+        opacity: 0.8;
+    }
+
+}
+
+
+/* =========================
+   JOIN VANISH ANIMATION
+========================= */
+
+.join-section.join-hide {
+    animation: joinDisappear 0.7s ease forwards;
+}
+
+
+@keyframes joinDisappear {
+
+    0% {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform: scale(0.96);
+
+        visibility: hidden;
+    }
+
+}
+
+
+/* =========================
+   LOGIN SHOW ANIMATION
+========================= */
+
+.login-section.login-show {
+    display: flex;
+
+    animation: loginSectionAppear 0.8s ease forwards;
+}
+
+
+@keyframes loginSectionAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .login-section {
+        min-height: 550px;
+
+        padding: 60px 15px;
+    }
+
+    .login-box {
+        padding: 40px 22px;
+    }
+
+    .login-box h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   LOGIN → CREATE ACCOUNT
+========================= */
+
+/* Login vanish */
+
+.login-section.login-hide {
+    animation: loginDisappear 0.6s ease forwards;
+}
+
+
+@keyframes loginDisappear {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.96);
+        visibility: hidden;
+    }
+
+}
+
+
+/* =========================
+   CREATE ACCOUNT SECTION
+========================= */
+
+.create-account-section {
+    width: 100%;
+    min-height: 600px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 80px 20px;
+
+    background: #050505;
+}
+
+
+/* Background Glow */
+
+.create-account-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    filter: blur(100px);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation: createGlow 6s ease-in-out infinite alternate;
+}
+
+
+/* Create Account Box */
+
+.create-account-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: 420px;
+    max-width: 90%;
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(255, 255, 255, 0.045);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.6);
+
+}
+
+
+/* Create Account Show */
+
+.create-account-section.create-account-show {
+    display: flex;
+
+    animation: createAccountAppear 0.8s ease forwards;
+}
+
+
+/* Heading */
+
+.create-account-box h2 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* Description */
+
+.create-account-box > p {
+    margin-bottom: 30px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 14px;
+}
+
+
+/* Inputs */
+
+.create-account-box input {
+    width: 100%;
+    height: 52px;
+
+    margin-bottom: 15px;
+
+    padding: 0 18px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+
+/* Placeholder */
+
+.create-account-box input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* Input Focus */
+
+.create-account-box input:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.06);
+}
+
+
+/* Create Button */
+
+.create-btn {
+    width: 100%;
+    height: 52px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #050505;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.35s ease;
+}
+
+
+/* Button Hover */
+
+.create-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(255, 255, 255, 0.18);
+}
+
+
+/* Login Link */
+
+.create-account-box .account-text {
+    margin-top: 25px !important;
+
+    color: rgba(255, 255, 255, 0.45) !important;
+
+    font-size: 13px;
+}
+
+
+.create-account-box .account-text button {
+    margin-left: 5px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.create-account-box .account-text button:hover {
+    color: #999999;
+}
+
+
+/* =========================
+   CREATE ACCOUNT ANIMATION
+========================= */
+
+@keyframes createAccountAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(0.92);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes createGlow {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.8);
+
+        opacity: 0.4;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
+
+        opacity: 0.8;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .create-account-section {
+        min-height: 550px;
+
+        padding: 60px 15px;
+    }
+
+    .create-account-box {
+        padding: 40px 22px;
+    }
+
+    .create-account-box h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
    FOOTER RESPONSIVE
 ========================= */
