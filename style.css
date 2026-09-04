@@ -1831,6 +1831,309 @@
 
 
 
+/* =========================
+   REVIEW SECTION
+========================= */
+
+.review-section {
+    width: 100%;
+    padding: 100px 0;
+
+    background: #050505;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   REVIEW HEADER
+========================= */
+
+.review-header {
+    text-align: center;
+
+    padding: 0 20px;
+
+    margin-bottom: 55px;
+}
+
+
+.review-header span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+.review-header h2 {
+    margin: 0;
+
+    font-size: 45px;
+
+    line-height: 1.1;
+
+    color: #ffffff;
+
+    letter-spacing: -1px;
+}
+
+
+.review-header p {
+    max-width: 500px;
+
+    margin: 20px auto 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================
+   REVIEW SLIDER
+========================= */
+
+.review-slider {
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 22px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding: 20px 60px 35px;
+
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+}
+
+
+/* Chrome / Edge / Safari */
+
+.review-slider::-webkit-scrollbar {
+    height: 6px;
+}
+
+
+.review-slider::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+.review-slider::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+
+    border-radius: 20px;
+}
+
+
+/* =========================
+   REVIEW CARD
+========================= */
+
+.review-card {
+
+    flex: 0 0 360px;
+
+    min-height: 230px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    overflow: hidden;
+
+    scroll-snap-align: start;
+
+    border-radius: 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.4s ease;
+}
+
+
+/* Card Hover */
+
+.review-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.review-card img {
+
+    position: absolute;
+
+    top: 28px;
+
+    right: 28px;
+
+    width: 58px;
+
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+
+    transition: 0.4s ease;
+}
+
+
+/* Image Hover */
+
+.review-card:hover img {
+
+    transform: scale(1.08);
+
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* =========================
+   USER NAME
+========================= */
+
+.review-card h3 {
+
+    margin: 0;
+
+    padding-right: 75px;
+
+    font-size: 17px;
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.review-card .stars {
+
+    margin-top: 10px;
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   REVIEW TEXT
+========================= */
+
+.review-card p {
+
+    margin-top: 22px;
+
+    max-width: 280px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .review-header h2 {
+        font-size: 35px;
+    }
+
+    .review-slider {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .review-card {
+        flex: 0 0 310px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .review-section {
+        padding: 70px 0;
+    }
+
+    .review-header h2 {
+        font-size: 28px;
+    }
+
+    .review-card {
+        flex: 0 0 285px;
+
+        min-height: 220px;
+
+        padding: 25px;
+    }
+
+    .review-card img {
+        width: 50px;
+        height: 50px;
+
+        top: 24px;
+        right: 24px;
+    }
+
+}
+
+
+
+
+
+
 
 
 
