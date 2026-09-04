@@ -19,8 +19,6 @@ navIcons.forEach((icon) => {
 
         if (navName === "home") {
 
-            console.log("Home clicked");
-
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
@@ -35,8 +33,6 @@ navIcons.forEach((icon) => {
 
         else if (navName === "categories") {
 
-            console.log("Categories clicked");
-
             showCategories();
 
         }
@@ -47,8 +43,6 @@ navIcons.forEach((icon) => {
         // ===============================
 
         else if (navName === "feedback") {
-
-            console.log("Feedback clicked");
 
             const reviewSection =
                 document.querySelector(".review-section");
@@ -71,15 +65,17 @@ navIcons.forEach((icon) => {
 
         else if (navName === "login") {
 
-            console.log("Login clicked");
-
             const loginSection =
                 document.getElementById("loginSection");
 
             const joinSection =
                 document.querySelector(".join-section");
 
+            const createAccountSection =
+                document.getElementById("createAccountSection");
 
+
+            // Join section hide
             if (joinSection) {
 
                 joinSection.classList.add("join-hide");
@@ -87,20 +83,31 @@ navIcons.forEach((icon) => {
             }
 
 
-            setTimeout(() => {
+            // Create account hide
+            if (createAccountSection) {
 
-                if (loginSection) {
+                createAccountSection.classList.remove("show-create");
+                createAccountSection.classList.remove("create-show");
 
-                    loginSection.classList.add("login-show");
+            }
+
+
+            // Login show
+            if (loginSection) {
+
+                loginSection.classList.add("show-login");
+                loginSection.classList.add("login-show");
+
+                setTimeout(() => {
 
                     loginSection.scrollIntoView({
                         behavior: "smooth",
                         block: "start"
                     });
 
-                }
+                }, 100);
 
-            }, 500);
+            }
 
         }
 
@@ -110,8 +117,6 @@ navIcons.forEach((icon) => {
         // ===============================
 
         else if (navName === "cart") {
-
-            console.log("Cart clicked");
 
             const cartSection =
                 document.getElementById("cart");
@@ -125,7 +130,7 @@ navIcons.forEach((icon) => {
 
             } else {
 
-                console.log("Cart section not created yet.");
+                console.log("Cart section not found.");
 
             }
 
@@ -143,9 +148,7 @@ navIcons.forEach((icon) => {
 
 function showCategories() {
 
-    // যদি আগে থেকেই menu থাকে
-    // তাহলে menu remove করবে
-
+    // Old menu থাকলে remove
     const oldMenu =
         document.querySelector(".category-menu");
 
@@ -159,7 +162,7 @@ function showCategories() {
 
 
     // ===============================
-    // CATEGORY MENU CREATE
+    // CREATE CATEGORY MENU
     // ===============================
 
     const categoryMenu =
@@ -169,7 +172,7 @@ function showCategories() {
 
 
     // ===============================
-    // ALL CATEGORIES
+    // CATEGORIES
     // ===============================
 
     const categories = [
@@ -218,7 +221,7 @@ function showCategories() {
 
 
     // ===============================
-    // CREATE CATEGORY BUTTONS
+    // CREATE BUTTONS
     // ===============================
 
     categories.forEach((category) => {
@@ -226,33 +229,24 @@ function showCategories() {
         const button =
             document.createElement("button");
 
-
         button.textContent =
             category.name;
-
 
         button.className =
             "category-item";
 
 
-        // ===============================
-        // CATEGORY CLICK
-        // ===============================
-
+        // Category click
         button.addEventListener("click", () => {
 
             const section =
                 document.getElementById(category.target);
 
-
             if (section) {
 
                 section.scrollIntoView({
-
                     behavior: "smooth",
-
                     block: "start"
-
                 });
 
             } else {
@@ -271,7 +265,6 @@ function showCategories() {
         });
 
 
-        // Button menu-এর মধ্যে যোগ
         categoryMenu.appendChild(button);
 
     });
@@ -286,7 +279,6 @@ function showCategories() {
             '[data-name="categories"]'
         );
 
-
     if (categoriesIcon) {
 
         categoriesIcon.parentElement.appendChild(
@@ -295,10 +287,299 @@ function showCategories() {
 
     } else {
 
-        console.log(
-            "Categories icon not found."
-        );
+        console.log("Categories icon not found.");
 
     }
+
+}
+
+
+
+// ==================================================
+// JOIN / LOGIN / CREATE ACCOUNT
+// ==================================================
+
+
+// ===============================
+// GET ELEMENTS
+// ===============================
+
+const joinBtn =
+    document.getElementById("joinBtn");
+
+const loginSection =
+    document.getElementById("loginSection");
+
+const createAccountSection =
+    document.getElementById("createAccountSection");
+
+const createAccountBtn =
+    document.getElementById("createAccountBtn");
+
+const backToLoginBtn =
+    document.getElementById("backToLoginBtn");
+
+
+
+// ===============================
+// JOIN NOW → LOGIN
+// ===============================
+
+if (joinBtn) {
+
+    joinBtn.addEventListener("click", () => {
+
+        console.log("JOIN NOW clicked");
+
+
+        // Join section
+        const joinSection =
+            document.querySelector(".join-section");
+
+
+        // Join section hide
+        if (joinSection) {
+
+            joinSection.classList.add("join-hide");
+
+        }
+
+
+        // Create account hide
+        if (createAccountSection) {
+
+            createAccountSection.classList.remove(
+                "show-create"
+            );
+
+            createAccountSection.classList.remove(
+                "create-show"
+            );
+
+        }
+
+
+        // Login show
+        if (loginSection) {
+
+            setTimeout(() => {
+
+                loginSection.classList.add(
+                    "show-login"
+                );
+
+                loginSection.classList.add(
+                    "login-show"
+                );
+
+
+                loginSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }, 500);
+
+        }
+
+    });
+
+}
+
+
+
+// ===============================
+// LOGIN → CREATE ACCOUNT
+// ===============================
+
+if (createAccountBtn) {
+
+    createAccountBtn.addEventListener("click", () => {
+
+        console.log("CREATE ACCOUNT clicked");
+
+
+        // Login hide
+        if (loginSection) {
+
+            loginSection.classList.remove(
+                "show-login"
+            );
+
+            loginSection.classList.remove(
+                "login-show"
+            );
+
+        }
+
+
+        // Create account show
+        if (createAccountSection) {
+
+            createAccountSection.classList.add(
+                "show-create"
+            );
+
+            createAccountSection.classList.add(
+                "create-show"
+            );
+
+
+            createAccountSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
+
+}
+
+
+
+// ===============================
+// CREATE ACCOUNT → LOGIN
+// ===============================
+
+if (backToLoginBtn) {
+
+    backToLoginBtn.addEventListener("click", () => {
+
+        console.log("BACK TO LOGIN clicked");
+
+
+        // Create account hide
+        if (createAccountSection) {
+
+            createAccountSection.classList.remove(
+                "show-create"
+            );
+
+            createAccountSection.classList.remove(
+                "create-show"
+            );
+
+        }
+
+
+        // Login show
+        if (loginSection) {
+
+            loginSection.classList.add(
+                "show-login"
+            );
+
+            loginSection.classList.add(
+                "login-show"
+            );
+
+
+            loginSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
+
+}
+
+
+
+// ===============================
+// LOGIN FORM
+// ===============================
+
+const loginForm =
+    document.getElementById("loginForm");
+
+if (loginForm) {
+
+    loginForm.addEventListener("submit", (e) => {
+
+        e.preventDefault();
+
+
+        const email =
+            document.getElementById("loginEmail").value.trim();
+
+        const password =
+            document.getElementById("loginPassword").value.trim();
+
+
+        if (email === "" || password === "") {
+
+            alert("Please fill all fields.");
+
+            return;
+
+        }
+
+
+        alert("Login successful! 🎉");
+
+    });
+
+}
+
+
+
+// ===============================
+// CREATE ACCOUNT FORM
+// ===============================
+
+const createAccountForm =
+    document.getElementById("createAccountForm");
+
+if (createAccountForm) {
+
+    createAccountForm.addEventListener("submit", (e) => {
+
+        e.preventDefault();
+
+
+        const name =
+            document.getElementById("createName").value.trim();
+
+        const email =
+            document.getElementById("createEmail").value.trim();
+
+        const password =
+            document.getElementById("createPassword").value.trim();
+
+        const confirmPassword =
+            document.getElementById("confirmPassword").value.trim();
+
+
+        // Empty field check
+        if (
+            name === "" ||
+            email === "" ||
+            password === "" ||
+            confirmPassword === ""
+        ) {
+
+            alert("Please fill all fields.");
+
+            return;
+
+        }
+
+
+        // Password check
+        if (password !== confirmPassword) {
+
+            alert("Passwords do not match.");
+
+            return;
+
+        }
+
+
+        alert("Account created successfully! 🎉");
+
+    });
 
 }
